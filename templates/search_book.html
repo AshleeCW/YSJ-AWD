@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Search the book database{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+
+</div>
+
+{{ wtf.quick_form(form) }}
+
+<div class="results">
+	<h2>Book Database</h2>
+	<table border="1" cellpadding="10" cellspacing="10">
+		<tr>
+			<th>Book ID</th>
+			<th>Book Name</th>
+			<th>Author</th>
+		</tr>
+		{% for row in result %}
+			<tr>
+				{% for item in row %}
+					<td>{{ item }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+<div class="add">
+	{{ wtf.quick_form(addBook) }}
+</div>
+
+{% endblock %}
