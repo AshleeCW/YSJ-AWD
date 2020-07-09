@@ -18,7 +18,7 @@ booky = Flask(__name__)
 
 #should place this in .env file and be random
 booky.config['SECRET_KEY'] = 'Something About a Rainbow and a Green Island'
-conn = MySQLdb.connect("cs2s.yorkdc.net","ashlee.w","X9GQ3STN","ashleewilliamson_awd_booky")
+conn = MySQLdb.connect("", "", "","")
 
 cursor = conn.cursor()
 
